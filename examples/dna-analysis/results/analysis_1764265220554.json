@@ -1,0 +1,158 @@
+{
+  "timestamp": "2025-11-27T17:38:49.350Z",
+  "pipeline": "RuVector DNA Analysis",
+  "version": "1.0.0",
+  "sections": {
+    "dataSource": {
+      "source": "NCBI GenBank + Synthetic",
+      "fetchedAt": "2025-11-27T17:40:20.532Z",
+      "sequenceCount": 7
+    },
+    "database": {
+      "totalSequences": 7,
+      "totalBasePairs": 32006,
+      "avgLength": 4572,
+      "avgGCContent": "50.04%",
+      "byOrganism": {
+        "Synthetic": 7
+      },
+      "byType": {
+        "Synthetic": 6,
+        "Synthetic ORF": 1
+      }
+    },
+    "similarity": {
+      "topPairs": [
+        {
+          "sequence1": "Synthetic sequence GC=50%",
+          "sequence2": "Synthetic coding sequence",
+          "similarity": "93.41%"
+        },
+        {
+          "sequence1": "Synthetic sequence GC=50%",
+          "sequence2": "Synthetic sequence GC=60%",
+          "similarity": "92.45%"
+        },
+        {
+          "sequence1": "Synthetic sequence GC=30%",
+          "sequence2": "Synthetic sequence GC=40%",
+          "similarity": "90.93%"
+        },
+        {
+          "sequence1": "Synthetic sequence GC=60%",
+          "sequence2": "Synthetic sequence GC=70%",
+          "similarity": "89.19%"
+        },
+        {
+          "sequence1": "Synthetic sequence GC=60%",
+          "sequence2": "Synthetic coding sequence",
+          "similarity": "88.90%"
+        },
+        {
+          "sequence1": "Synthetic sequence GC=40%",
+          "sequence2": "Synthetic sequence GC=50%",
+          "similarity": "86.23%"
+        },
+        {
+          "sequence1": "Synthetic sequence GC=40%",
+          "sequence2": "Synthetic coding sequence",
+          "similarity": "85.44%"
+        },
+        {
+          "sequence1": "Synthetic sequence GC=50%",
+          "sequence2": "Synthetic sequence GC=70%",
+          "similarity": "75.60%"
+        },
+        {
+          "sequence1": "Synthetic sequence GC=70%",
+          "sequence2": "Synthetic coding sequence",
+          "similarity": "73.17%"
+        },
+        {
+          "sequence1": "Synthetic sequence GC=40%",
+          "sequence2": "Synthetic sequence GC=60%",
+          "similarity": "71.24%"
+        }
+      ]
+    },
+    "clustering": {
+      "numClusters": 5,
+      "iterations": 2,
+      "clusters": [
+        {
+          "id": 1,
+          "size": 2,
+          "members": [
+            {
+              "id": "SYNTH_GC60",
+              "name": "Synthetic sequence GC=60%",
+              "organism": "Synthetic",
+              "gcContent": "59.24"
+            },
+            {
+              "id": "SYNTH_GC70",
+              "name": "Synthetic sequence GC=70%",
+              "organism": "Synthetic",
+              "gcContent": "69.66"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "size": 2,
+          "members": [
+            {
+              "id": "SYNTH_GC50",
+              "name": "Synthetic sequence GC=50%",
+              "organism": "Synthetic",
+              "gcContent": "51.40"
+            },
+            {
+              "id": "SYNTH_CODING",
+              "name": "Synthetic coding sequence",
+              "organism": "Synthetic",
+              "gcContent": "50.53"
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "size": 1,
+          "members": [
+            {
+              "id": "SYNTH_REPEAT",
+              "name": "Synthetic repetitive sequence",
+              "organism": "Synthetic",
+              "gcContent": "50.00"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "size": 1,
+          "members": [
+            {
+              "id": "SYNTH_GC30",
+              "name": "Synthetic sequence GC=30%",
+              "organism": "Synthetic",
+              "gcContent": "29.60"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "size": 1,
+          "members": [
+            {
+              "id": "SYNTH_GC40",
+              "name": "Synthetic sequence GC=40%",
+              "organism": "Synthetic",
+              "gcContent": "39.84"
+            }
+          ]
+        }
+      ]
+    },
+    "detailedAnalysis": []
+  }
+}

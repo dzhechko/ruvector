@@ -1,0 +1,87 @@
+
+═══════════════════════════════════════════════════════════════════════════════
+                         RUVECTOR DNA ANALYSIS REPORT
+═══════════════════════════════════════════════════════════════════════════════
+
+Generated: 2025-11-27T17:38:49.350Z
+Pipeline: RuVector DNA Analysis v1.0.0
+
+───────────────────────────────────────────────────────────────────────────────
+                              DATABASE SUMMARY
+───────────────────────────────────────────────────────────────────────────────
+
+Total Sequences: 7
+Total Base Pairs: 32,006
+Average Length: 4,572 bp
+Average GC Content: 50.04%
+
+By Organism:
+  - Synthetic: 7
+
+By Type:
+  - Synthetic: 6
+  - Synthetic ORF: 1
+
+───────────────────────────────────────────────────────────────────────────────
+                            SIMILARITY ANALYSIS
+───────────────────────────────────────────────────────────────────────────────
+
+Top Similar Sequence Pairs:
+  1. Synthetic sequence GC=50% <-> Synthetic coding sequence: 93.41%
+  2. Synthetic sequence GC=50% <-> Synthetic sequence GC=60%: 92.45%
+  3. Synthetic sequence GC=30% <-> Synthetic sequence GC=40%: 90.93%
+  4. Synthetic sequence GC=60% <-> Synthetic sequence GC=70%: 89.19%
+  5. Synthetic sequence GC=60% <-> Synthetic coding sequence: 88.90%
+  6. Synthetic sequence GC=40% <-> Synthetic sequence GC=50%: 86.23%
+  7. Synthetic sequence GC=40% <-> Synthetic coding sequence: 85.44%
+  8. Synthetic sequence GC=50% <-> Synthetic sequence GC=70%: 75.60%
+  9. Synthetic sequence GC=70% <-> Synthetic coding sequence: 73.17%
+  10. Synthetic sequence GC=40% <-> Synthetic sequence GC=60%: 71.24%
+
+───────────────────────────────────────────────────────────────────────────────
+                             CLUSTER ANALYSIS
+───────────────────────────────────────────────────────────────────────────────
+
+Number of Clusters: 5
+Iterations: 2
+
+Cluster 2 (2 sequences):
+  - Synthetic sequence GC=60% [Synthetic]
+  - Synthetic sequence GC=70% [Synthetic]
+
+Cluster 4 (2 sequences):
+  - Synthetic sequence GC=50% [Synthetic]
+  - Synthetic coding sequence [Synthetic]
+
+Cluster 1 (1 sequences):
+  - Synthetic repetitive sequence [Synthetic]
+
+Cluster 3 (1 sequences):
+  - Synthetic sequence GC=30% [Synthetic]
+
+Cluster 5 (1 sequences):
+  - Synthetic sequence GC=40% [Synthetic]
+
+───────────────────────────────────────────────────────────────────────────────
+                           PHYLOGENETIC ANALYSIS
+───────────────────────────────────────────────────────────────────────────────
+
+Method: N/A
+Sequences Analyzed: N/A
+
+Tree visualization not available
+
+───────────────────────────────────────────────────────────────────────────────
+                                   NOTES
+───────────────────────────────────────────────────────────────────────────────
+
+- K-mer size: 4 (256 dimensions)
+- Distance metric: Cosine similarity
+- Clustering algorithm: K-means
+- Phylogeny method: UPGMA (Unweighted Pair Group Method with Arithmetic Mean)
+
+For detailed JSON results, see the accompanying analysis_*.json file.
+
+═══════════════════════════════════════════════════════════════════════════════
+                              END OF REPORT
+═══════════════════════════════════════════════════════════════════════════════

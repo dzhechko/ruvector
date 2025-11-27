@@ -1,0 +1,18 @@
+{
+  "name": "ruvector-dna-analysis",
+  "version": "1.0.0",
+  "description": "DNA sequence analysis using ruvector vector database",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "fetch-data": "node src/fetch-dna-data.js",
+    "analyze": "node src/dna-analyzer.js",
+    "full-analysis": "node src/index.js --full"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "keywords": ["dna", "genomics", "vector-database", "bioinformatics"],
+  "license": "MIT"
+}
