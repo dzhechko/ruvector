@@ -48,6 +48,7 @@ User Query → [SONA Engine] → Model Response → User Feedback
 | **AI & Compute** | | |
 | [Local LLMs](./crates/ruvllm) | 🤖 Run models on your hardware — Metal, CUDA, WebGPU, no API costs | Cloud API required (pay per call) |
 | [Sublinear solvers](./crates/ruvector-solver) | 📐 O(log n) PageRank, spectral methods, sparse linear systems | Not available |
+| [Graph sparsifier](./crates/ruvector-sparsifier) | 🕸️ Keeps a small shadow graph that tracks the full graph's structure in real time | Not available |
 | [Genomics](./examples/dna) | 🧬 Variant calling, protein translation, HNSW k-mer search in 12 ms | Not available |
 | [Quantum coherence](./crates/ruqu) | ⚛️ Error correction via dynamic min-cut optimization | Not available |
 | **Database & Platform** | | |
@@ -148,9 +149,10 @@ User Query → [SONA Engine] → Model Response → User Feedback
 | 51 | [**FPGA transformer**](./crates/ruvector-fpga-transformer) | Hardware-accelerated transformer inference on programmable chips |
 | 52 | [**Quantum coherence**](./crates/ruQu) | Error correction via dynamic min-cut optimization for quantum circuits |
 | 53 | [**Sublinear solvers**](./crates/ruvector-solver) | 8 algorithms (Neumann, CG, Forward Push, TRUE, BMSSP) — O(log n) to O(sqrt(n)) |
-| 54 | [**Mincut-gated transformer**](./crates/ruvector-mincut-gated-transformer) | Dynamic attention that prunes irrelevant connections using graph min-cut |
-| 55 | [**Nervous system**](./crates/ruvector-nervous-system) | 5-layer bio-inspired adaptive system with spiking networks and BTSP learning |
-| 56 | [**Prime Radiant**](./crates/prime-radiant) | Coherence engine using sheaf Laplacian math for AI safety and hallucination detection |
+| 54 | [**Graph sparsifier**](./crates/ruvector-sparsifier) | Compressed shadow graph preserving spectral properties — O(n log n) edges instead of O(n²) |
+| 55 | [**Mincut-gated transformer**](./crates/ruvector-mincut-gated-transformer) | Dynamic attention that prunes irrelevant connections using graph min-cut |
+| 56 | [**Nervous system**](./crates/ruvector-nervous-system) | 5-layer bio-inspired adaptive system with spiking networks and BTSP learning |
+| 57 | [**Prime Radiant**](./crates/prime-radiant) | Coherence engine using sheaf Laplacian math for AI safety and hallucination detection |
 
 **Genomics & Health** ([rvDNA](./examples/dna))
 | # | Capability | What It Does |
@@ -613,6 +615,29 @@ cargo add ruvector-solver --features all-algorithms
 
 - **177 tests** | 5 Criterion benchmarks | WASM + NAPI bindings
 - **ADR documentation**: [docs/research/sublinear-time-solver/](./docs/research/sublinear-time-solver/)
+
+</details>
+
+<details>
+<summary><strong>Graph Sparsifier</strong> — a small graph that behaves like the big one</summary>
+
+**[ruvector-sparsifier](./crates/ruvector-sparsifier/README.md)** maintains a compressed "shadow graph" that preserves the structural properties of a much larger graph. Think of it as a lossy summary: instead of storing every connection between millions of nodes, the sparsifier keeps only the most important edges — enough to answer questions about cuts, connectivity, and flow almost as accurately as the full graph, but with far less memory and compute.
+
+It updates incrementally as edges are added or removed, so the compressed version stays current without rebuilding from scratch. A built-in auditor periodically checks that the approximation is still good; if quality drifts, it triggers an automatic rebuild.
+
+```bash
+cargo add ruvector-sparsifier
+```
+
+| Component | What it does |
+|-----------|-------------|
+| **Backbone** | Spanning forest (union-find) that guarantees connectivity is never lost |
+| **Importance scorer** | Random walks estimate which edges matter most for the graph's structure |
+| **Spectral sampler** | Keeps edges proportional to their importance, reweights to stay unbiased |
+| **Auditor** | Random probes verify the compressed graph still matches the original |
+
+- **49 tests** | Criterion benchmarks | WASM bindings
+- **Research**: [docs/research/spectral-sparsification/](./docs/research/spectral-sparsification/)
 
 </details>
 
