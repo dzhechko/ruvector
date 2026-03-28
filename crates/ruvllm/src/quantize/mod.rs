@@ -81,6 +81,7 @@ pub mod quip;
 mod ruvltra_quant;
 pub mod security;
 pub mod turbo_quant;
+pub mod turboquant_profile;
 
 pub use ruvltra_quant::{
     dequantize_for_ane,
@@ -174,3 +175,6 @@ pub use turbo_quant::{
     TurboQuantBits, TurboQuantCacheTier, TurboQuantCompressor, TurboQuantConfig,
     TurboQuantEmbeddingStore, TurboQuantKvPair, TurboQuantStats, TurboQuantized,
 };
+
+// TurboQuant sidecar profile loading (ADR-129)
+pub use turboquant_profile::{LayerConfig, TurboQuantProfile};
